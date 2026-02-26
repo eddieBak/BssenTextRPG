@@ -1,7 +1,7 @@
 namespace TextRPG.Models;
 
 // 캐릭터 기본 추상 클래스
-public class Character
+public abstract class Character
 {
     #region 프로퍼티
 
@@ -24,7 +24,7 @@ public class Character
         Name = name;
         MaxHp = maxHp;
         CurrentHp = maxHp;
-        maxMp = maxMp;
+        MaxMp = maxMp;
         CurrentMp = maxMp;
         AttackPower = attackPower;
         Defense = defense;
