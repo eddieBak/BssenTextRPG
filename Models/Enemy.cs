@@ -39,6 +39,7 @@ public class Enemy : Character
     }
     
     // 적 캐릭터 정보 출력
+
     public override void DisplayInfo()
     {
         // base.DisplayInfo();
@@ -47,6 +48,10 @@ public class Enemy : Character
         Console.WriteLine($"HP: {CurrentHp}/{MaxHp}");
         Console.WriteLine($"공격력: {AttackPower}");
         Console.WriteLine($"방어력: {Defense}");
+    }
+    public override int Attack(Character target)
+    {
+        return target.TakeDamage(AttackPower);
     }
 
     #endregion
