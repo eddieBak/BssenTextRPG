@@ -1,3 +1,4 @@
+using System;
 namespace TextRPG.Models;
 
 // 캐릭터 기본 추상 클래스

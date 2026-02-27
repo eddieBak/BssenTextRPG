@@ -1,3 +1,4 @@
+using System;
 namespace TextRPG.Models;
 
 public class Enemy : Character
