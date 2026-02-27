@@ -68,7 +68,7 @@ public class Equipment : Item
                 return new Equipment("천갑옷", "기본 방어구", 100, EquipmentSlot.Armor, 0, 5);
             case "철갑옷":
                 return new Equipment("철갑옷", "강력한 방어구", 500, EquipmentSlot.Armor, 0, 20);
-            case "전설갑옷":
+            case "전설갑옷"
                 return new Equipment("전설갑옷", "최고급 방어구", 1000, EquipmentSlot.Armor, 0, 30);
             default:
                 return null;

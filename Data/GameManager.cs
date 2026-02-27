@@ -66,9 +66,6 @@ public class GameManager
         // 인벤토리 초기화
         Inventory = new InventorySystem();
         
-        // 초기 아이템 지급
-        SetupInitItems();
-        
         // 메인 게임 루프
         IsRunning = true;
         while (IsRunning)
@@ -149,24 +146,6 @@ public class GameManager
         ConsoleUI.PressAnyKey();
         
     }
-    
-    // 초기 아이템 지급
-    private void SetupInitItems()
-    {
-        // 기본 장비
-        Inventory.AddItem(Equipment.CreateWeapon("목검"));
-        Inventory.AddItem(Equipment.CreateArmor("천갑옷"));
-        
-        // 포션 지급
-        Inventory.AddItem(Consumable.CreatePotion("체력포션"));
-        Inventory.AddItem(Consumable.CreatePotion("체력포션"));
-        Inventory.AddItem(Consumable.CreatePotion("마나포션"));
-
-        Console.WriteLine("\n초기 장비가 지급되었습니다.");
-        ConsoleUI.PressAnyKey();
-        
-    }
-    
     #endregion
 
     #region 메인 메뉴
@@ -183,7 +162,7 @@ public class GameManager
         Console.WriteLine("2. 인벤토리");
         Console.WriteLine("3. 상점");
         Console.WriteLine("4. 던전입장 (전투)");
-        Console.WriteLine("5. 휴식 (HP/MP 회복)");
+        Console.WriteLine("5. 휴식 (HP/MP 회복");
         Console.WriteLine("6. 저장");
         Console.WriteLine("0. 게임 종료");
         
