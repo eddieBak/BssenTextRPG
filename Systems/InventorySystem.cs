@@ -72,7 +72,7 @@ public class InventorySystem
         }
     }
 
-    public void ShowInventoryMenu()
+    public void ShowInventoryMenu(Player? player)
     {
         while (true)
         {
@@ -89,6 +89,8 @@ public class InventorySystem
             {
                 case "1":
                     // 아이템 사용 로직
+                    UseItem(player);
+                    
                     break;
                 case "2":
                     //아이템 버리기 로직
@@ -99,6 +101,38 @@ public class InventorySystem
                     Console.WriteLine("잘못된 선택입니다. 다시 선택하세요.");
                     break;
             }
+        }
+    }
+
+    #endregion
+
+    #region 아이템 사용
+
+    private void UseItem(Player player)
+    {
+        if (Items.Count == 0)
+        {
+            Console.WriteLine("인벤토리가 비어있습니다.");
+            return;
+        }
+        
+        Console.Write("\n사용할 아이템 번호 (0:취소)> ");
+
+        if (int.TryParse(Console.ReadLine(), out int index) && index > 0 && index < Items.Count)
+        {
+            Item item = Items[index - 1];
+            if (item.Use(player))
+            {
+                // 소모품일 경우 사용 후 리스트에서 제거함
+                if (item is Consumable)
+                {
+                    RemoveItem(item);
+                }
+            }
+        }
+        else if (index != 0)
+        {
+            Console.WriteLine("잘못된 선택입니다.");
         }
     }
 
